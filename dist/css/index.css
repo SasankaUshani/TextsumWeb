@@ -1,0 +1,217 @@
+Carousel
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    font-size: 25px;
+    color: rgb(247, 247, 247);
+    /* background: linear-gradient(to right, #00000042 , transparent); */
+}
+
+.carousel-caption>h3 {
+    color: white;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+
+.carousel-inner .item {
+    background-color: #000000;
+}
+
+.carousel {
+    margin-bottom: 20px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    width: 100% !important;
+    opacity: 0.7;
+}
+
+.trendingItem {
+    color: #00BF9A;
+    text-align: left;
+    font-size: 130%;
+}
+
+.trending h2 {
+    text-align: left;
+}
+
+.newly-added h2 {
+    text-align: left;
+}
+
+Form {
+    text-align: center;
+}
+
+
+/* confirm items */
+
+.glyphicon-remove-sign {
+    color: #999;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.glyphicon-remove-sign:hover {
+    color: #BE6060;
+    padding-left: 10px;
+}
+
+.rowType2 {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#price p {
+    color: #E91D29;
+    text-align: left;
+}
+
+#icon {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #E91D29
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+#cart {
+    color: #00BF9A;
+    float: right;
+    position: absolute;
+    bottom: 43px;
+    right: 33px;
+    background: white;
+    padding: 7px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 191, 153, 0.342);
+    border-radius: 100%;
+    /* border: 1px solid rgba(0, 191, 153, 0.267); */
+}
+
+video {
+    object-fit: cover;
+}
+
+#findus h2 {
+    text-align: left;
+}
+
+#findus h3 {
+    margin-bottom: 25px;
+}
+
+#findus h3 span {
+    color: #00BF9A;
+}
+
+#findus h4 {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    color: #00BF9A;
+}
+
+#findus span.fa {
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 1025px) and (max-width: 2560px) {
+    .findus-description {
+        padding-left: 50px;
+    }
+    input.subscribe-input.form-control {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 738px) {
+    /* 768px */
+    .carousel-caption {
+        font-size: 14px;
+    }
+    .carousel-caption>h3 {
+        font-size: 20px;
+    }
+    .trendingItem {
+        font-size: 13px;
+    }
+    .trending,
+    .newly-added {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    /* div#findus {
+        padding-left:  0px;
+        padding-right:  0px;
+    } */
+    #items .col-md-3,
+    #items .col-xs-6 {
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+    #icon {
+        top: 20px;
+        right: 30px;
+    }
+    #cart {
+        bottom: 28px;
+        right: 21px;
+        /* bottom: 25px;
+        right: 70px; */
+    }
+    #price p {
+        font-size: 11px;
+        padding-top: 5px;
+        margin-bottom: 0px;
+    }
+    .thumbnail>img {
+        /* height: 240px !important; */
+    }
+    .thumbnail {
+        margin-bottom: 12px;
+    }
+    h2 {
+        padding-bottom: 10px;
+        margin-top: 5px;
+    }
+    ul.navitem-flex.nav.navbar-nav.navbar-right,
+    .navbar-form.navbar-left {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+span#cart:hover {
+    background: #00bf9a;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+span#icon:hover {
+    color: #d47c80;
+    cursor: pointer;
+}
+
+/* video { 
+    -webkit-transform: scaleX(2); 
+    -moz-transform: scaleX(2);
+  } */
+ 

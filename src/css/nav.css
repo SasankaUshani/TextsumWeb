@@ -1,0 +1,240 @@
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default {
+    background-color: #00bf9a;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-text {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: #ffffff;
+    background: #ffffff18;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: #ffffff;
+    background-color: #00b893;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+    background-color: #00b893;
+}
+
+.dropdown-menu>li>a:hover {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: #ffffff;
+    background-color: #00b893;
+    border-bottom: 1px solid #00a282;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #00b893;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #00b893;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #ffffff;
+}
+
+.navbar-default .navbar-link {
+    color: #ffffff;
+}
+
+.navbar-default .navbar-link:hover {
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    background: #00bf9a;
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+    background: #ffffff18;
+}
+
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: #ffffff;
+        background-color: #00bf9a;
+    }
+
+
+
+/* unvisited link */
+
+.navbar-default a:link {
+    color: #ffffff;
+}
+
+
+/* visited link */
+
+.navbar-default a:visited {
+    color: #ffffff;
+}
+
+
+/* mouse over link */
+
+.navbar-default a:hover {
+    color: #ffffff;
+}
+
+
+/* selected link */
+
+.navbar-default a:active {
+    color: #ffffff;
+}
+
+span.fa {
+    font-size: 1.4em;
+}
+
+.input-group-btn span.fa {
+    font-size: 1em;
+}
+
+.custom-dropdown .caret {
+    display: none;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+/*  */
+.custom-search {
+    background-color: #ffffff;
+    /* border: 2px solid #00BF9A; */
+    color: #00BF9A;
+    height: 36px;
+    transition-duration: 0.4s;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #ffffff00 !important;
+}
+
+    .navbar-collapse.collapse {
+        display: inline-block!important;
+        float: left;
+    }
+
+    .navbar-right {
+        display: flex;
+    }
+    .navbar-left .input-group {
+        padding-left: 10px;
+    }
+    .navbar-right li {
+        padding-top: 8px;
+    }
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse,
+    .navbar-toggle {
+        display: block !important;
+    }
+    .navbar-header {
+        float: none;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        text-align: center;
+        /* padding-right: 30px; */
+    }
+    .navbar-nav .open .dropdown-menu {
+        background-color: #00b893;
+    }
+
+
+    /* iPads (portrait and landscape) ----------- */
+ 
+    .navbar-right li {
+        padding-top: 10px;
+    }
+
+    .navbar-form {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+
+    .navbar-right li {
+        padding-top: 0px;
+    }
+
+
+    ul.nav.navbar-nav {
+        margin-left: 120px;
+    }
+    ul.navitem-flex.nav.navbar-nav.navbar-right {
+        margin-right: -576px;
+    }
+
+
+
+
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+      display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+      display:block !important;
+    }
+    .navbar-header {
+      float: none;
+    
+  
+  }

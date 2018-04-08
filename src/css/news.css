@@ -1,0 +1,47 @@
+.responsive {
+  height: 230px;
+  width: 370px;
+  padding-bottom: 10px;
+}
+.col-lg-4 {
+  padding-left: 0;
+}
+.newsContainer {
+  /* background: red; */
+}
+h1 {
+  font-size: 14px;
+  font-style: italic;
+  color: slategray;
+  text-align: end;
+}
+h3 {
+  font-size: 13px;
+  font-style: italic;
+  color: darkblue;
+  text-align: end;
+}
+topic {
+  font-family: 'Trebuchet MS';
+  font-size: 14;
+  font-weight: 600;
+  color: black;
+}
+
+.articleHeader {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Trebuchet MS';
+  font-weight: 600;
+  color: black;
+  padding-bottom: 10px;
+}
+.graph{
+  width: 300px;
+  height: 700px;
+}
+.articleBody{
+  padding-bottom: 30px;
+}
