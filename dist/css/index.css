@@ -132,72 +132,6 @@ video {
     padding-right: 10px;
 }
 
-@media (min-width: 1025px) and (max-width: 2560px) {
-    .findus-description {
-        padding-left: 50px;
-    }
-    input.subscribe-input.form-control {
-        width: 25%;
-    }
-}
-
-@media only screen and (max-width: 738px) {
-    /* 768px */
-    .carousel-caption {
-        font-size: 14px;
-    }
-    .carousel-caption>h3 {
-        font-size: 20px;
-    }
-    .trendingItem {
-        font-size: 13px;
-    }
-    .trending,
-    .newly-added {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    /* div#findus {
-        padding-left:  0px;
-        padding-right:  0px;
-    } */
-    #items .col-md-3,
-    #items .col-xs-6 {
-        padding-right: 3px;
-        padding-left: 3px;
-    }
-    #icon {
-        top: 20px;
-        right: 30px;
-    }
-    #cart {
-        bottom: 28px;
-        right: 21px;
-        /* bottom: 25px;
-        right: 70px; */
-    }
-    #price p {
-        font-size: 11px;
-        padding-top: 5px;
-        margin-bottom: 0px;
-    }
-    .thumbnail>img {
-        /* height: 240px !important; */
-    }
-    .thumbnail {
-        margin-bottom: 12px;
-    }
-    h2 {
-        padding-bottom: 10px;
-        margin-top: 5px;
-    }
-    ul.navitem-flex.nav.navbar-nav.navbar-right,
-    .navbar-form.navbar-left {
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-}
-
 span#cart:hover {
     background: #00bf9a;
     color: white;
@@ -209,9 +143,3 @@ span#icon:hover {
     color: #d47c80;
     cursor: pointer;
 }
-
-/* video { 
-    -webkit-transform: scaleX(2); 
-    -moz-transform: scaleX(2);
-  } */
- 

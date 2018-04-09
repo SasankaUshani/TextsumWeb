@@ -4,10 +4,14 @@ import {render} from 'react-dom';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: true};
+    this.state = {
+      isToggleOn: true
+    };
 
     // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this
+      .handleClick
+      .bind(this);
   }
 
   handleClick() {
@@ -16,15 +20,16 @@ class App extends React.Component {
     }));
   }
 
- 
   render() {
     return (
       <div>
-        <h6>Toggle </h6>
+        <h6>Toggle
+        </h6>
         <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'Add to preference' : 'Added'}
-      </button>
-
+          {this.state.isToggleOn
+            ? 'Add to preference'
+            : 'Added'}
+        </button>
 
         {/* <ButtonComponent/> */}
       </div>
