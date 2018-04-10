@@ -1,28 +1,4 @@
-
-
-
-
-// var cn = {
-//     host: 'localhost', // server name or IP address;
-//     port: 5000,
-//     database: 'Test',
-//     user: 'postgres',
-//     password: '9080'
-// };
 const { Client } = require('pg')
-
-// const pool = new Pool({
-//   user: 'postgres',
-//   host: 'localhost',
-//   database: 'Test',
-//   password: '9080',
-//   port: 5000,
-// })
-
-// pool.query('SELECT NOW()', (err, res) => {
-//   console.log(err, res)
-//   pool.end()
-// })
 
 const client = new Client({
   user: 'postgres',
@@ -35,9 +11,9 @@ client.connect()
 
 const query = {
   // give the query a unique name
-  text: 'SELECT * from SUMMERIZEDNEWS',
- 
+  text: 'SELECT * from SUMMERIZEDNEWS', 
 }
+
 client.query(query, (err, res) => {
   if (err) {
     console.log("*****failed*****")
