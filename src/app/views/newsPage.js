@@ -6,7 +6,8 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 
-const urlToFetch = username => `https://api.github.com/users/${username}`;
+const urlToFetch = username =>
+  `http://localhost:8000/TextSum_Master_war_exploded/helloworld`;
 
 const data = [
   { quarter: 1, earnings: 13000 },
@@ -20,6 +21,9 @@ class News extends React.Component {
     super(props);
     this.state = {
       username: 'Sasanka',
+      githubData: 'sasa',
+      newsObject: [],
+
       image:
         'http://www.savvymom.ca/wp-content/uploads/fly-images/90221/rainy-day-690x435-c.jpg',
       news: [
@@ -36,7 +40,7 @@ class News extends React.Component {
     };
   }
 
-  
+  componentWillMount() {}
 
   renderHeader = type => {
     return <h2>{type}</h2>;
@@ -103,42 +107,48 @@ class News extends React.Component {
     );
   }
   renderGraph() {
-    return(
-    <VictoryChart
-      animate="500"
-      domainPadding={20}
-      theme={VictoryTheme.material}
-    >
-      <VictoryAxis
-        tickValues={['Trumph', 'Russia', 'Kim Jon', 'U.S.A.']}
-      />
-      <VictoryAxis dependentAxis tickFormat={x => `${x / 100}%`} />
-      <VictoryBar data={data} x="quarter" y="earnings" />
-    </VictoryChart>
+    return (
+      <VictoryChart
+        animate="500"
+        domainPadding={20}
+        theme={VictoryTheme.material}
+      >
+        <VictoryAxis tickValues={['Trumph', 'Russia', 'Kim Jon', 'U.S.A.']} />
+        <VictoryAxis dependentAxis tickFormat={x => `${x / 100}%`} />
+        <VictoryBar data={data} x="quarter" y="earnings" />
+      </VictoryChart>
     );
   }
-  componentDidMount() {
-    fetch(urlToFetch(this.state.username))
-      .then(d => d.json())
-      .then(d => {
-        this.setState({
-          githubData: d
-        });
+
+  fetchNews() {
+    console.log("fetch news called")
+    fetch('http://localhost:8000/TextSum_Master_war_exploded/helloworld')
+      .then(result => {
+        // Get the result
+        // If we want text, call result.text()
+        console.log(result);
+
+        return result.json();
+      })
+      .then(jsonResult => {
+        // Do something with the result
+        console.log('+++++++++++++++');
+        console.log(jsonResult);
+        console.log(jsonResult.title)
       });
   }
   render() {
-    if (!this.state.githubData) return <p>Loading .... </p>;
+    // if (!this.state.githubData) return <p>Loading .... </p>;
+
     return (
       <div>
         <div className="container boxborder">
           <h6>Today's Highlights for your preference</h6>
-          <h3> Taken through API call --> {this.state.githubData.name}</h3>
+          <h3> Taken through API call --> {this.state.githubData}</h3>
+          {this.fetchNews()}
           {this.renderHeader('Politics')}
-
           {this.renderItem(this.state.news)}
-          <div className="graph">
-          {this.renderGraph()}
-          </div>
+          <div className="graph">{this.renderGraph()}</div>
         </div>
       </div>
     );

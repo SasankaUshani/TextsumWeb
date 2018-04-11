@@ -16,11 +16,12 @@ const query = {
 
 client.query(query, (err, res) => {
   if (err) {
-    console.log("*****failed*****")
+    console.log("***** Failed *****")
     console.log(err.stack)
   } else {
-    console.log("*****success*****")
+     console.log("***** Success *****")
     console.log(res.rows[0])
+
   }
 })
 
@@ -38,7 +39,7 @@ http.createServer(function (request, response) {
    response.end('Hello World\n');
 }).listen(8081);
 
-console.log("http===============")
+// console.log("http===============")
 
 // Console will print the message
 console.log('Server running at http://127.0.0.1:8081/');
