@@ -5,16 +5,28 @@ import FontAwesome from 'react-fontawesome';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import $ from 'jquery'
 
 const urlToFetch = username =>
   `http://localhost:8000/TextSum_Master_war_exploded/helloworld`;
 
 const data = [
-  { quarter: 1, earnings: 13000 },
-  { quarter: 2, earnings: 16500 },
-  { quarter: 3, earnings: 14250 },
-  { quarter: 4, earnings: 19000 }
+  { quarter: 1, earnings: 2 * 100 },
+  { quarter: 2, earnings: 6 * 100 },
+  { quarter: 3, earnings: 5 * 100 },
+  { quarter: 4, earnings: 10 * 100 }
 ];
+
+var response = {
+  "news": [
+    {
+      "synopsis": "Continuing the global exploits in the unstoppable franchise built on speed, Vin Diesel, Paul Walker and Dwayne Johnson lead the returning cast of Fast & Furious 7. James Wan directs this chapter of the hugely successful series that also welcomes back favorites Michelle Rodriguez, Jordana Brewster, Tyrese Gibson, Chris \"Ludacris\" Bridges, Elsa Pataky and Lucas Black. They are joined by international action stars new to the franchise including Jason Statham, Djimon Hounsou, Tony Jaa, Ronda Rousey and Kurt Russell.",
+      "title": "Furious 7",
+      "year": 2015
+    }
+  ],
+  "runtime": 140
+};
 
 class News extends React.Component {
   constructor(props) {
@@ -22,6 +34,9 @@ class News extends React.Component {
     this.state = {
       username: 'Sasanka',
       githubData: 'sasa',
+      data: {
+        news: []
+      },
       newsObject: [],
 
       image:
@@ -38,9 +53,17 @@ class News extends React.Component {
         }
       ]
     };
+    {
+      this.fetchNews();
+    }
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    var a = this;
+    $.getJSON(this.props.url, function() {
+      a.setState({ data: response });
+    });
+  }
 
   renderHeader = type => {
     return <h2>{type}</h2>;
@@ -49,10 +72,7 @@ class News extends React.Component {
   renderArticle() {
     return (
       <span>
-        <div className="articleHeader">
-          {' '}
-          Donuld Trump is going to do the neuclear bomb.{' '}
-        </div>
+        <div className="articleHeader"> Donuld Trump is and his bullshit. </div>
         <img className="responsive" src="/assets/News/donuld.jpg" alt="" />
         <div className="articleBody">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -87,7 +107,7 @@ class News extends React.Component {
           <img className="responsive" src="/assets/News/donuld.jpg" alt="" />
           <h1>CNCB . Phill Lebau</h1>
 
-          <topic>Donuld decide to do the neuclear bomb</topic>
+          <h3>donuld trump and his bullshit</h3>
 
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -97,6 +117,7 @@ class News extends React.Component {
             only five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged. It was popularised in the 1960s.
           </p>
+
           <Popup trigger={<h3> Read more >>> </h3>} modal closeOnDocumentClick>
             {this.renderArticle()}
           </Popup>
@@ -121,22 +142,39 @@ class News extends React.Component {
   }
 
   fetchNews() {
-    console.log("fetch news called")
-    fetch('http://localhost:8000/TextSum_Master_war_exploded/helloworld')
+    console.log('fetch news called');
+    fetch('http://localhost:8000/TextSum_Master_war_exploded/getSummarizedNews')
       .then(result => {
         // Get the result
         // If we want text, call result.text()
-        console.log(result);
-
+        // console.log(result);
         return result.json();
       })
       .then(jsonResult => {
         // Do something with the result
-        console.log('+++++++++++++++');
-        console.log(jsonResult);
-        console.log(jsonResult.title)
+        this.setState(() => ({ newsObject: jsonResult }));
+
+        this.setState({ newsObject: jsonResult });
+        console.log('resultsssssss');
+        console.log(this.state.newsObject);
+        // var response = this.state.newsObject;
+
+        // console.log('title!!!!!!!!!!!!')
+        // console.log(jsonResult.image)
       });
   }
+
+  fetchJSON(){
+    return(
+      <div>
+      <h6>Data block</h6>
+      {this.state.data.news.map(function(movie, i) {
+        return <h6 key={'movie-'+ i}>{movie.year}</h6>
+      })}
+    </div>
+    );
+  }
+
   render() {
     // if (!this.state.githubData) return <p>Loading .... </p>;
 
@@ -144,10 +182,12 @@ class News extends React.Component {
       <div>
         <div className="container boxborder">
           <h6>Today's Highlights for your preference</h6>
+
           <h3> Taken through API call --> {this.state.githubData}</h3>
-          {this.fetchNews()}
-          {this.renderHeader('Politics')}
-          {this.renderItem(this.state.news)}
+
+          {this.renderHeader('Political')}
+          {this.renderItem()}
+          {this.fetchJSON()}
           <div className="graph">{this.renderGraph()}</div>
         </div>
       </div>
