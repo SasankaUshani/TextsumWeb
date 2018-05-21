@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 import { Link } from 'react-router-dom';
 import Popup from 'reactjs-popup';
-import $ from 'jquery'
+import $ from 'jquery';
 
 const urlToFetch = username =>
   `http://localhost:8000/TextSum_Master_war_exploded/helloworld`;
@@ -17,16 +17,7 @@ const data = [
   { quarter: 4, earnings: 10 * 100 }
 ];
 
-var response = {
-  "news": [
-    {
-      "synopsis": "Continuing the global exploits in the unstoppable franchise built on speed, Vin Diesel, Paul Walker and Dwayne Johnson lead the returning cast of Fast & Furious 7. James Wan directs this chapter of the hugely successful series that also welcomes back favorites Michelle Rodriguez, Jordana Brewster, Tyrese Gibson, Chris \"Ludacris\" Bridges, Elsa Pataky and Lucas Black. They are joined by international action stars new to the franchise including Jason Statham, Djimon Hounsou, Tony Jaa, Ronda Rousey and Kurt Russell.",
-      "title": "Furious 7",
-      "year": 2015
-    }
-  ],
-  "runtime": 140
-};
+
 
 class News extends React.Component {
   constructor(props) {
@@ -34,36 +25,32 @@ class News extends React.Component {
     this.state = {
       username: 'Sasanka',
       githubData: 'sasa',
-      data: {
-        news: []
-      },
+
+      
       newsObject: [],
 
+      data: {
+        newsObject: []
+      },
       image:
         'http://www.savvymom.ca/wp-content/uploads/fly-images/90221/rainy-day-690x435-c.jpg',
-      news: [
-        {
-          title: 'Alarm Sense Integrating Optical Smoke Detector',
-          description:
-            'She claims Hutchison started sexually abusing her when she was 16.Hutchison, who was an assistant coach on the 2008 U.S.Hutchison is currently listed as the CEO of King Aquatics. Investigators have searched the Seattle home of a former U.S.Olympic Team swimming coach amid allegations that he sexually abused and took explicit photos of an Olympic swimmer when she was underage. Hutchison is alleged to have taken nude photos of Ariana Kukors when she was 17.Homeland Security launched an investigation on Jan. following a report from Kukors, according to the court documents.Kukors, now 28, said in a statement Wednesday that she went to police to report that Hutchison sexually assaulted her on trips and while training at Seattle area pools.',
-          image: {
-            url:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdULOTwEOd1oKMLlw668s0cxqW1akruwEPK6AFuRIUMjIDP2AJ'
-          }
-        }
-      ]
+      // news: [
+      //   {
+      //     title: 'Alarm Sense Integrating Optical Smoke Detector',
+      //     description:
+      //       'She claims Hutchison started sexually abusing her when she was 16.Hutchison, who was an assistant coach on the 2008 U.S.Hutchison is currently listed as the CEO of King Aquatics. Investigators have searched the Seattle home of a former U.S.Olympic Team swimming coach amid allegations that he sexually abused and took explicit photos of an Olympic swimmer when she was underage. Hutchison is alleged to have taken nude photos of Ariana Kukors when she was 17.Homeland Security launched an investigation on Jan. following a report from Kukors, according to the court documents.Kukors, now 28, said in a statement Wednesday that she went to police to report that Hutchison sexually assaulted her on trips and while training at Seattle area pools.',
+      //     image: {
+      //       url:
+      //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdULOTwEOd1oKMLlw668s0cxqW1akruwEPK6AFuRIUMjIDP2AJ'
+      //     }
+      //   }
+      // ]
     };
     {
       this.fetchNews();
     }
   }
 
-  componentWillMount() {
-    var a = this;
-    $.getJSON(this.props.url, function() {
-      a.setState({ data: response });
-    });
-  }
 
   renderHeader = type => {
     return <h2>{type}</h2>;
@@ -151,29 +138,26 @@ class News extends React.Component {
         return result.json();
       })
       .then(jsonResult => {
-        // Do something with the result
+       
         this.setState(() => ({ newsObject: jsonResult }));
 
-        this.setState({ newsObject: jsonResult });
+      
         console.log('resultsssssss');
         console.log(this.state.newsObject);
-        // var response = this.state.newsObject;
-
-        // console.log('title!!!!!!!!!!!!')
-        // console.log(jsonResult.image)
+  
       });
   }
 
-  fetchJSON(){
-    return(
-      <div>
-      <h6>Data block</h6>
-      {this.state.data.news.map(function(movie, i) {
-        return <h6 key={'movie-'+ i}>{movie.year}</h6>
-      })}
-    </div>
-    );
-  }
+  // fetchJSON() {
+  //   return (
+  //     <div>
+  //       <h6>Data block</h6>
+  //       {this.state.data.newsObject.map(function(newsArticle, i) {     
+  //         return <h6 key={'newsArticle-' + i}>{newsArticle.title}</h6>;
+  //       })}
+  //     </div>
+  //   );
+  // }
 
   render() {
     // if (!this.state.githubData) return <p>Loading .... </p>;
@@ -183,10 +167,10 @@ class News extends React.Component {
         <div className="container boxborder">
           <h6>Today's Highlights for your preference</h6>
 
-          <h3> Taken through API call --> {this.state.githubData}</h3>
 
           {this.renderHeader('Political')}
           {this.renderItem()}
+          
           {this.fetchJSON()}
           <div className="graph">{this.renderGraph()}</div>
         </div>
