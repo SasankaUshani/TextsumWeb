@@ -91,15 +91,14 @@ h3 {
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
     color:slategray;
-    
 }
 
 h5 {
     
-    font-size: 14px;
+    font-size: 12px;
     color:slategray;
     text-align: right;
     
@@ -110,7 +109,10 @@ h5 {
 }
 
 p {
+    font-size: 12px;
     margin-bottom: 5px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 
