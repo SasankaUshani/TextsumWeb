@@ -38,10 +38,9 @@ topic {
   color: black;
   padding-bottom: 10px;
 }
-.graph{
-  width: 300px;
-  height: 700px;
+.graph {
+  height: 600px;
 }
-.articleBody{
+.articleBody {
   padding-bottom: 30px;
 }

@@ -14,10 +14,9 @@ const data = [
   { quarter: 1, earnings: 2 * 100 },
   { quarter: 2, earnings: 6 * 100 },
   { quarter: 3, earnings: 5 * 100 },
-  { quarter: 4, earnings: 10 * 100 }
+  { quarter: 4, earnings: 10 * 100 },
+  { quarter: 5, earnings: 4 * 100 }
 ];
-
-
 
 class News extends React.Component {
   constructor(props) {
@@ -25,15 +24,11 @@ class News extends React.Component {
     this.state = {
       username: 'Sasanka',
       githubData: 'sasa',
-
-      
       newsObject: [],
-
-      data: {
-        newsObject: []
-      },
+      val: '',
+      text: '',
       image:
-        'http://www.savvymom.ca/wp-content/uploads/fly-images/90221/rainy-day-690x435-c.jpg',
+        'http://www.savvymom.ca/wp-content/uploads/fly-images/90221/rainy-day-690x435-c.jpg'
       // news: [
       //   {
       //     title: 'Alarm Sense Integrating Optical Smoke Detector',
@@ -51,7 +46,6 @@ class News extends React.Component {
     }
   }
 
-
   renderHeader = type => {
     return <h2>{type}</h2>;
   };
@@ -59,69 +53,103 @@ class News extends React.Component {
   renderArticle() {
     return (
       <span>
-        <div className="articleHeader"> Donuld Trump is and his bullshit. </div>
+        <div className="articleHeader">
+          {' '}
+          JC Penney CEO Marvin Ellison quits for top job at Lowe's and tells
+          staff it was a once in a lifetime opportunity{' '}
+        </div>
         <img className="responsive" src="/assets/News/donuld.jpg" alt="" />
         <div className="articleBody">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s.
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s.
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s.
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s.
+          Six Flags Entertainment Corporation announced Tuesday that it has
+          agreed to acquire the lease rights to operate five parks, including
+          Frontier City and White Water Bay in Oklahoma City.\nThe theme park
+          group has entered into a purchase agreement with affiliates of Premier
+          Parks LLC, and the five parks are owned by EPR Properties.\nSix Flags
+          is the largest regional theme park operator in the world.\nThe other
+          three include Wet n^ Wild Splashtown in Houston, Wet n^ Wild Phoenix
+          and Darien Lake near Buffalo, New York.\n“Today’s announcement
+          represents another milestone in our strategic North American growth
+          initiative to seek out park acquisitions that expand our addressable
+          market,” Jim Reid-Anderson, Six Flags chairman, CEO and president,
+          said in a news release.\n“These are all fantastic properties that
+          complement our existing portfolio and provide tremendous added value
+          and cross-visitation opportunities for our extensive Membership and
+          Season Pass base.”\nThe purchase of Premier Parks, LLC would make Six
+          Flags the largest waterpark operator in North America, according to a
+          news release.\n“We are thrilled to welcome these outstanding
+          properties and employees into our family of parks and look forward to
+          sharing the thrill of Six Flags with guests of all ages in these key
+          markets,” Reid-Anderson said.\nThe transactions are expected to close
+          in June and are subject to customary closing conditions, officials
+          said.\nMore information about the transaction can be found
+          here.\nHearst Television participates in various affiliate marketing
+          programs, which means we may get paid commissions on purchases made
+          through our links to retailer sites.\n"
         </div>
       </span>
     );
   }
+
+  // renderItem(newsArticle){
+  //   var news = [];
+  //   for (var i = 0; i < this.state.newsObject.news[0]; i++) {
+  //     news.push(
+  //       <div>
+  //             {this.state && this.state.val &&
+  //                 <div>
+  //                   {
+  //                     this.state.newsObject.news[0].title
+  //                   }
+  //                 </div>
+  //               }
+  //       </div>
+  //     );
+  //   }
+  // return news;
+  // }
+
   renderItem(newsArticle) {
     return (
       <div>
-        <div class="col-lg-4 newsContainer">
+        <div class="col-lg-12 newsContainer">
           <img className="responsive" src="/assets/News/donuld.jpg" alt="" />
-          <h1>CNCB . Phill Lebau</h1>
 
-          <h3>donuld trump and his bullshit</h3>
+          {this.state &&
+            this.state.val && (
+              <div>
+                {/* {this.state.newsObject.map((item, index) => (
+                  <span className="indent" key={index} />
+                ))} */}
 
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s.
-          </p>
+                <h6>{this.state.newsObject.news[1].title}</h6>
+                <br />
+                {this.state.newsObject.news[1].summary}
+                {/* {this.state.text} */}
+                <h1>{this.state.newsObject.news[1].author}</h1>
+                <h1>{this.state.newsObject.news[1].source}</h1>
+              </div>
+            )}
 
+          {/* <h1> CNCB . Phill Lebau</h1> */}
           <Popup trigger={<h3> Read more >>> </h3>} modal closeOnDocumentClick>
             {this.renderArticle()}
           </Popup>
-
           <h5>2018-08-04 13:34pm</h5>
         </div>
       </div>
     );
   }
+
   renderGraph() {
     return (
       <VictoryChart
         animate="500"
-        domainPadding={20}
+        domainPadding={10}
         theme={VictoryTheme.material}
       >
-        <VictoryAxis tickValues={['Trumph', 'Russia', 'Kim Jon', 'U.S.A.']} />
+        <VictoryAxis
+          tickValues={['JC Penny', 'Salesforce', 'Mc Donuld', 'U.S.A.', 'NYSE']}
+        />
         <VictoryAxis dependentAxis tickFormat={x => `${x / 100}%`} />
         <VictoryBar data={data} x="quarter" y="earnings" />
       </VictoryChart>
@@ -132,19 +160,13 @@ class News extends React.Component {
     console.log('fetch news called');
     fetch('http://localhost:8000/TextSum_Master_war_exploded/getSummarizedNews')
       .then(result => {
-        // Get the result
-        // If we want text, call result.text()
-        // console.log(result);
         return result.json();
       })
       .then(jsonResult => {
-       
         this.setState(() => ({ newsObject: jsonResult }));
-
-      
-        console.log('resultsssssss');
+        this.setState(() => ({ val: 1 }));
         console.log(this.state.newsObject);
-  
+        console.log(this.state.newsObject.news[0].title);
       });
   }
 
@@ -152,7 +174,7 @@ class News extends React.Component {
   //   return (
   //     <div>
   //       <h6>Data block</h6>
-  //       {this.state.data.newsObject.map(function(newsArticle, i) {     
+  //       {this.state.data.newsObject.map(function(newsArticle, i) {
   //         return <h6 key={'newsArticle-' + i}>{newsArticle.title}</h6>;
   //       })}
   //     </div>
@@ -166,12 +188,10 @@ class News extends React.Component {
       <div>
         <div className="container boxborder">
           <h6>Today's Highlights for your preference</h6>
-
-
-          {this.renderHeader('Political')}
+          {this.renderHeader('General')}
           {this.renderItem()}
-          
-          {this.fetchJSON()}
+          {/* {this.fetchJSON()} */}
+          <h6>Trending topics</h6>
           <div className="graph">{this.renderGraph()}</div>
         </div>
       </div>

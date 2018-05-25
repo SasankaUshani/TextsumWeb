@@ -1,23 +1,18 @@
 import ReactDOM from 'react-dom';
-import React, { Component,Text } from 'react';
+import React, { Component, Text } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
 
 export default class Team extends React.Component {
   // add to preference button function
   constructor(props) {
     super(props);
     this.state = {
-      isToggleOn: true,
+      isToggleOn: true
     };
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
   }
-
-  
-
 
   handleClick() {
     this.setState(prevState => ({
@@ -27,18 +22,18 @@ export default class Team extends React.Component {
 
   render() {
     return (
-      
       <div className="container boxborder">
         <h2>SELECT YOUR PREFERENCE</h2>
-     
-      
+        <Link to="/news">
+          <Button className="btn btn-filled">Save Preference</Button>
+        </Link>
 
         <div className="row">
           <div className="col-md-3">
             <div className="hovereffect">
               <img className="img-responsive" src="/assets/space.jpg" alt="" />
               <div className="overlay">
-                <h2>TECHNOLOGY</h2>
+                <h2>Genaral</h2>
                 <p>
                   <a>
                     <br />All new technology news
@@ -76,6 +71,10 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <br />
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
@@ -95,6 +94,9 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
@@ -118,6 +120,10 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <br />
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
@@ -137,6 +143,10 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <br />
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
@@ -160,6 +170,10 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <br />
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
@@ -183,6 +197,10 @@ export default class Team extends React.Component {
                     <br />Colombo 01000
                   </a>
                 </p>
+                <br />
+                <Button className="btn btn-filled" onClick={this.handleClick}>
+                  Add to preference
+                </Button>
               </div>
             </div>
           </div>
