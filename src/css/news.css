@@ -17,9 +17,8 @@ h1 {
 }
 h3 {
   font-size: 13px;
-  font-style: italic;
   color: darkblue;
-  text-align: end;
+  text-align: center;
 }
 topic {
   font-family: 'Trebuchet MS';
@@ -46,4 +45,16 @@ topic {
 }
 .card-img-top {
   padding: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  
+}
+.card {
+  margin: 10px;
+}
+.abstractive{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  
 }

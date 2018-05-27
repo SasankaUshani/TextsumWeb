@@ -44,7 +44,7 @@ export default class Team extends React.Component {
                     <br />get updated
                   </a>
                 </p>
-
+                <br />
                 <Button className="btn btn-filled" onClick={this.handleClick}>
                   {this.state.isToggleOn ? 'Add to preference' : 'Added'}
                 </Button>
